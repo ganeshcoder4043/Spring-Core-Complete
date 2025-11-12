@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean define -->
+    
+    <bean class="com.springcore.collections.Emp" name="Emp1">
+    		<property name="name" value="ganesh"></property>
+    		
+    		<property name="phones">
+    			<list>
+    				<value>1256322</value>
+    				<value>1242352</value>
+    				<value>12252562</value>
+    				<value>125656322</value>
+    				<value>125634576322</value>
+    				<value>12567367322</value>
+    				<value>1256353322</value>
+    				<value>12563224522</value>
+    			</list>
+    		</property>
+    		
+    		<property name="address">
+    			<set>
+    				<value>delhi</value>
+    				<value>haryna</value>
+    				<value>prem nagar</value>
+    				<value>nangaloi</value>
+    			</set>
+    		</property>
+    		
+    		<property name="courses">
+    			<map>
+    				<entry key="java" value="12 months"></entry>
+    				<entry key="javaScript" value="6 months"></entry>
+    			</map>
+    		</property>
+    		
+    		<property name="props">
+        <props>
+            <prop key="db.username">root</prop>
+            <prop key="db.password">12345</prop>
+            <prop key="app.version">1.0.0</prop>
+        </props>
+    </property>
+    
+    
+    </bean>
+    
+    
+    
+</beans>

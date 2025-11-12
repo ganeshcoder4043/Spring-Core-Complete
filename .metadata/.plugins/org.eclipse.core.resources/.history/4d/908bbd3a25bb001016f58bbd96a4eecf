@@ -1,0 +1,56 @@
+package springmvcsearch;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
+
+@Controller
+public class SearchController {
+
+	@RequestMapping("/home")
+	public String home() {
+
+		String s = null;
+		System.out.println(s.length());
+		return "home";
+	}
+	
+	@RequestMapping("/search")
+	public RedirectView search(@RequestParam("queryBox") String query) 
+	{
+		RedirectView redirectView = new RedirectView();
+		
+		String url = "https://www.google.com/search?q="+ query;
+		redirectView.setUrl(url);
+		return redirectView;
+	}
+	
+	
+	
+	//-> For Multiple Exception 
+//	@ExceptionHandler({NullPointerException.class, NumberFormatException.class, IllegalStateException.class})
+//	public String exceptionHandler() {
+//		return "errorPage";
+//	}
+	
+	
+	//-> for single Exception 
+	
+	@ExceptionHandler(value = NullPointerException.class)
+	public String exceptionHandler1(Model m) {
+		m.addAttribute("msg", "NullPointerException");
+		return "errorPage";
+	}
+	
+	@ExceptionHandler(value = NumberFormatException.class)
+	public String exceptionHandler2(Model m) {
+		m.addAttribute("msg", "NumberFormatException");
+		return "errorPage";
+	}
+	
+	
+	
+}

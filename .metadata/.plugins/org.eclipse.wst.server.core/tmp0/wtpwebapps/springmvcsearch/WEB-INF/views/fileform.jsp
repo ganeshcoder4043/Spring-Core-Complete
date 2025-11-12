@@ -1,0 +1,72 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored = "false" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload | Spring MVC</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        .upload-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .upload-card:hover {
+            transform: translateY(-5px);
+        }
+        .form-label {
+            font-weight: 600;
+            color: #444;
+        }
+        .btn-upload {
+            background-color: #5563DE;
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-upload:hover {
+            background-color: #4450b8;
+        }
+        h2 {
+            color: #5563DE;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="upload-card">
+    <h2>Upload Your Image</h2>
+    <form action="uploadFile" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label  class="form-label">Select Image</label>
+            <input type="file" class="form-control"  name="file" required>
+        </div>
+
+        <button type="submit" class="btn btn-upload w-100">Upload Image</button>
+    </form>
+
+    <%-- <c:if test="${not empty message}">
+        <div class="alert alert-success mt-3">${message}</div>
+    </c:if> --%>
+</div>
+
+</body>
+</html>
