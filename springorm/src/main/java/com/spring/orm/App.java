@@ -114,7 +114,11 @@ public class App
 					case 6:
 						go=false;
 						break;
-					
+							
+					default:System.out.println( "WRONG OPTION! PLEASE CHOOSE BETWEEN 1 TO 6.");
+                		break;
+							
+				}
 					}
 				} catch (Exception e) {
 					System.out.println("YOU ENTER WRONG OPTIONS CHOOSE ANOTHER OPTION");
